@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duman & Malika — 25 августа 2026</title>
+  <meta name="description" content="Приглашение на свадьбу Duman & Malika — 25 августа 2026" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Duman & Malika — Свадьба 25 августа 2026" />
+  <meta property="og:description" content="Мы приглашаем Вас разделить с нами один из самых важных дней нашей жизни." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── CONFIG VARIABLES ─── */
+    :root {
+      --name1: "Duman";
+      --name2: "Malika";
+
+      /* Palette */
+      --cream:     #faf7f2;
+      --warm-white:#fffef9;
+      --champagne: #e8dcc8;
+      --gold:      #c9a96e;
+      --gold-light:#e4c98a;
+      --gold-dark: #a07840;
+      --text-dark: #2c2416;
+      --text-mid:  #6b5c45;
+      --text-light:#9e8e77;
+
+      /* Typography */
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'Jost', system-ui, sans-serif;
+
+      /* Motion */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --duration: 0.8s;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--text-dark);
+      font-family: var(--font-body);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── UTILITY ─── */
+    .gold-line {
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    /* ─── FADE ANIMATIONS ─── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity var(--duration) var(--ease-out),
+                  transform var(--duration) var(--ease-out);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    .fade-in {
+      opacity: 0;
+      transition: opacity var(--duration) var(--ease-out);
+    }
+    .fade-in.visible { opacity: 1; }
+
+    /* delay helpers */
+    .d1 { transition-delay: 0.1s; }
+    .d2 { transition-delay: 0.2s; }
+    .d3 { transition-delay: 0.35s; }
+    .d4 { transition-delay: 0.5s; }
+    .d5 { transition-delay: 0.65s; }
+
+    /* ─── HERO ─── */
+    #hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom,
+          rgba(42,28,10,0.42) 0%,
+          rgba(42,28,10,0.25) 50%,
+          rgba(42,28,10,0.55) 100%),
+        url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80&fit=crop') center/cover no-repeat;
+      transform-origin: center;
+      will-change: transform;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+      max-width: 700px;
+      width: 100%;
+    }
+
+    .hero-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+    .hero-ornament span {
+      display: block;
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201,169,110,0.8), transparent);
+    }
+
+    .hero-names {
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 10vw, 6.5rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.05;
+      letter-spacing: 0.02em;
+    }
+
+    .hero-ampersand {
+      color: var(--gold-light);
+      font-style: italic;
+      display: block;
+      font-size: 0.6em;
+      line-height: 1.2;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(0.75rem, 2vw, 0.9rem);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      margin-top: 1.5rem;
+    }
+
+    .hero-date {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 5vw, 2.8rem);
+      font-weight: 300;
+      color: #fff;
+      margin-top: 0.5rem;
+      letter-spacing: 0.06em;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 3rem;
+      width: 60px;
+      height: 60px;
+      color: rgba(255,255,255,0.9);
+      text-decoration: none;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      transition: transform 0.3s var(--ease-out), filter 0.3s;
+      filter: drop-shadow(0 0 10px rgba(201,169,110,0.3));
+    }
+    .hero-cta:hover {
+      transform: scale(1.12) translateY(-2px);
+      filter: drop-shadow(0 0 18px rgba(228,201,138,0.6));
+    }
+    .hero-cta svg { transition: transform 0.4s var(--ease-out); }
+    .hero-cta:hover .arrow-bounce { transform: translateY(4px); }
+
+    /* ─── SECTIONS ─── */
+    .section {
+      padding: clamp(5rem, 12vw, 9rem) clamp(1.5rem, 6vw, 4rem);
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 7vw, 4rem);
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1.15;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .section-body {
+      font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+      color: var(--text-mid);
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.85;
+    }
+
+    /* Divider between sections */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 0 clamp(1.5rem, 6vw, 4rem);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .divider-line { flex: 1; height: 1px; background: var(--champagne); }
+    .divider svg { color: var(--gold); flex-shrink: 0; }
+
+    /* ─── GLASS CARD ─── */
+    .glass-card {
+      background: rgba(255,254,249,0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(201,169,110,0.22);
+      border-radius: 2px;
+      padding: clamp(2.5rem, 6vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+      box-shadow: 0 12px 60px rgba(44,36,22,0.07);
+    }
+
+    /* ─── DATE BLOCK ─── */
+    .date-display {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 10vw, 5.5rem);
+      font-weight: 300;
+      color: var(--text-dark);
+      letter-spacing: 0.05em;
+      line-height: 1;
+      margin: 1.5rem 0 1rem;
+    }
+    .date-display .slash {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .date-time {
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    .cal-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border: 1px solid var(--champagne);
+      margin: 0 auto 2rem;
+      color: var(--gold);
+    }
+
+    /* ─── VENUE ─── */
+    .venue-address {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+      font-style: italic;
+      color: var(--text-dark);
+      margin: 1.5rem 0 2rem;
+      line-height: 1.5;
+    }
+
+    .btn-map {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.9rem 2.2rem;
+      background: var(--gold);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-map:hover {
+      background: var(--gold-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ─── COUNTDOWN ─── */
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(0.5rem, 2vw, 1.5rem);
+      margin: 2rem 0;
+    }
+
+    .countdown-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .countdown-number {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 7vw, 4.2rem);
+      font-weight: 300;
+      color: var(--text-dark);
+      line-height: 1;
+      min-width: 2ch;
+      text-align: center;
+    }
+
+    .countdown-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    .countdown-sep {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--gold-light);
+      align-self: center;
+      margin-top: -0.6rem;
+    }
+
+    .countdown-done {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-style: italic;
+      color: var(--gold);
+      padding: 1rem 0;
+    }
+
+    /* ─── QUOTE ─── */
+    .quote-section {
+      background: linear-gradient(135deg, #f5ecd8 0%, #ede0c8 100%);
+      padding: clamp(5rem, 12vw, 9rem) clamp(1.5rem, 6vw, 4rem);
+    }
+
+    .quote-text {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 4.5vw, 2.4rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text-dark);
+      max-width: 620px;
+      margin: 1.5rem auto 0;
+      line-height: 1.5;
+    }
+
+    .quote-mark {
+      font-family: var(--font-display);
+      font-size: 5rem;
+      line-height: 0.5;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ─── RSVP ─── */
+    .rsvp-section {
+      background: var(--warm-white);
+      padding: clamp(5rem, 12vw, 9rem) clamp(1.5rem, 5vw, 3rem);
+    }
+
+    .rsvp-inner {
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .rsvp-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1.4rem;
+      text-align: left;
+    }
+
+    .rsvp-field label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    .rsvp-field input,
+    .rsvp-field select {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--champagne);
+      padding: 0.65rem 0;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      outline: none;
+      transition: border-color 0.3s;
+      width: 100%;
+    }
+    .rsvp-field input:focus,
+    .rsvp-field select:focus { border-bottom-color: var(--gold); }
+    .rsvp-field input::placeholder { color: var(--text-light); }
+
+    .rsvp-radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      text-align: left;
+      margin-bottom: 1.4rem;
+    }
+
+    .rsvp-radio-group > label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 0.2rem;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .radio-option input[type="radio"] { display: none; }
+
+    .radio-custom {
+      width: 18px;
+      height: 18px;
+      border: 1px solid var(--champagne);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s;
+    }
+
+    .radio-option input[type="radio"]:checked + .radio-custom {
+      border-color: var(--gold);
+    }
+    .radio-option input[type="radio"]:checked + .radio-custom::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .radio-option span {
+      font-size: 0.9rem;
+      color: var(--text-dark);
+    }
+
+    .btn-submit {
+      display: block;
+      width: 100%;
+      padding: 1.1rem;
+      background: var(--text-dark);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      margin-top: 2rem;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn-submit:hover { background: var(--gold-dark); transform: translateY(-2px); }
+
+    .rsvp-success {
+      display: none;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .rsvp-success.show { display: block; }
+    .rsvp-success p {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 4vw, 1.7rem);
+      font-style: italic;
+      color: var(--text-dark);
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
+    .rsvp-success .heart {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    #family-count-wrap { display: none; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--text-dark);
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .footer-names {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 300;
+      color: #fff;
+      letter-spacing: 0.04em;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .footer-love {
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-date {
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.35);
+      margin-top: 0.5rem;
+    }
+
+    .footer-ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 2.5rem;
+    }
+    .footer-ornament span { width: 30px; height: 1px; background: rgba(201,169,110,0.4); display: block; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 500px) {
+      .countdown-grid { gap: 0.3rem; }
+      .countdown-number { font-size: 2.2rem; }
+      .hero-cta { width: 54px; height: 54px; }
+    }
+
+    /* ─── REDUCED MOTION ─── */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up, .fade-in { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="hero">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-content">
+    <div class="hero-ornament fade-in d1">
+      <span></span>
+    </div>
+
+    <h1 class="hero-names fade-up d2">
+      Duman
+      <em class="hero-ampersand">&amp;</em>
+      Malika
+    </h1>
+
+    <p class="hero-subtitle fade-up d3">Үйлену тойына шақыру</p>
+
+    <p class="hero-date fade-up d4"></p>
+
+    <a href="#about" class="hero-cta fade-up d5" onclick="smoothTo('about')" aria-label="Далее">
+      <svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <!-- Heart outline -->
+        <path d="M30 50 C30 50 8 34 8 20 C8 13 13.5 8 20 8 C24.5 8 28.5 10.5 30 14 C31.5 10.5 35.5 8 40 8 C46.5 8 52 13 52 20 C52 34 30 50 30 50Z"
+          fill="none" stroke="rgba(228,201,138,0.75)" stroke-width="1.2"/>
+        <!-- Arrow inside -->
+        <line x1="30" y1="22" x2="30" y2="36" stroke="rgba(255,255,255,0.85)" stroke-width="1.4" stroke-linecap="round" class="arrow-bounce"/>
+        <path d="M24 31 L30 37 L36 31" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" class="arrow-bounce"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════ ABOUT ═══════════════ -->
+<section class="section" id="about">
+  <p class="section-eyebrow fade-up">— шақыру —</p>
+  <h2 class="section-title fade-up d1">Дорогие гости!</h2>
+  <span class="gold-line fade-up d2" style="margin-bottom:2rem;"></span>
+  <p class="section-body fade-up d3">
+    Мы будем счастливы разделить с Вами один из самых важных дней нашей жизни.
+    Ваше присутствие сделает этот день ещё более особенным.
+  </p>
+</section>
+
+<div class="divider"><div class="divider-line"></div><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.7C5.4 15.5 2 10.4 2 7a10 10 0 0 1 20 0c0 3.4-3.4 8.5-10 14.7z"/></svg><div class="divider-line"></div></div>
+
+<!-- ═══════════════ DATE ═══════════════ -->
+<section class="section" id="date">
+  <p class="section-eyebrow fade-up">— той салтанаты —</p>
+  <h2 class="section-title fade-up d1">Күні</h2>
+
+  <div class="glass-card fade-up d2">
+    <div class="cal-icon">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+    </div>
+    <div class="date-display">
+      25<span class="slash"> / </span>08<span class="slash"> / </span>2026
+    </div>
+    <p class="date-time" style="margin-top:1.2rem;">Басталу уақыты — 18:00</p>
+  </div>
+</section>
+
+<div class="divider"><div class="divider-line"></div><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.7C5.4 15.5 2 10.4 2 7a10 10 0 0 1 20 0c0 3.4-3.4 8.5-10 14.7z"/></svg><div class="divider-line"></div></div>
+
+<!-- ═══════════════ VENUE ═══════════════ -->
+<section class="section" id="venue">
+  <p class="section-eyebrow fade-up">— мекен-жайымыз —</p>
+  <h2 class="section-title fade-up d1">Астана</h2>
+
+  <div class="glass-card fade-up d2">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.3" style="margin-bottom:1.2rem;">
+      <circle cx="12" cy="10" r="3"/>
+      <path d="M12 21.7C5.4 15.5 2 10.4 2 7a10 10 0 0 1 20 0c0 3.4-3.4 8.5-10 14.7z"/>
+    </svg>
+
+    <!-- ✏️ ADDRESS — замените здесь -->
+    <p class="venue-address" id="venueAddress">
+      [Адрес будет добавлен позже]
+    </p>
+
+    <!-- ✏️ MAPS LINK — замените href -->
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-map" id="mapsBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="10" r="3"/>
+        <path d="M12 21.7C5.4 15.5 2 10.4 2 7a10 10 0 0 1 20 0c0 3.4-3.4 8.5-10 14.7z"/>
+      </svg>
+      Открыть в 2GIS
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════ COUNTDOWN ═══════════════ -->
+<section class="section" id="countdown" style="padding-top:0;">
+  <p class="section-eyebrow fade-up">— тойға дейін—</p>
+
+  <div class="glass-card fade-up d1">
+    <div id="cdDisplay">
+      <div class="countdown-grid">
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-days">00</span>
+          <span class="countdown-label">күн</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-hours">00</span>
+          <span class="countdown-label">сағат</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-mins">00</span>
+          <span class="countdown-label">минут</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-number" id="cd-secs">00</span>
+          <span class="countdown-label">секунд</span>
+        </div>
+      </div>
+    </div>
+    <div class="countdown-done" id="cdDone" style="display:none;">
+      Этот прекрасный день уже наступил ❤️
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ QUOTE ═══════════════ -->
+<div class="quote-section" id="quote">
+  <div style="max-width:700px;margin:0 auto;text-align:center;">
+    <p class="section-eyebrow fade-up">— сіздерді асыға күтеміз —</p>
+    <h2 class="section-title fade-up d1">Қуанышымызға ортақ болыңыздар!</h2>
+    <span class="gold-line fade-up d2" style="margin-bottom:2rem;"></span>
+    <blockquote class="quote-text fade-up d3">
+      <em class="quote-mark">"</em>
+      Любовь становится ещё прекраснее, когда ею делятся с близкими.
+    </blockquote>
+  </div>
+</div>
+
+<!-- ═══════════════ RSVP ═══════════════ -->
+<div class="rsvp-section" id="rsvp">
+  <div class="rsvp-inner">
+    <p class="section-eyebrow fade-up" style="text-align:center;">— сауалнама —</p>
+    <h2 class="section-title fade-up d1">Қатысуыңызды растаңыз</h2>
+    <span class="gold-line fade-up d2" style="margin-bottom:2.5rem;"></span>
+
+    <div id="rsvpForm" class="fade-up d3">
+      <div class="rsvp-field">
+        <label for="rsvp-name">Аты-жөніңіз</label>
+        <input type="text" id="rsvp-name" placeholder="Аты-жөніңіз" required />
+      </div>
+
+      
+
+      <div class="rsvp-radio-group">
+        <label>Тойға келесіз бе?</label>
+        <label class="radio-option">
+          <input type="radio" name="guests" value="alone" checked onchange="handleGuestChange(this)">
+          <span class="radio-custom"></span>
+          <span>Келемін</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="guests" value="couple" onchange="handleGuestChange(this)">
+          <span class="radio-custom"></span>
+          <span>Отбасыммен келемін</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="guests" value="family" onchange="handleGuestChange(this)">
+          <span class="radio-custom"></span>
+          <span>Өкінішке орай келе алмаймын</span>
+        </label>
+      </div>
+
+      <div class="rsvp-field" id="family-count-wrap">
+        <label for="rsvp-count">Количество человек</label>
+        <input type="number" id="rsvp-count" placeholder="3" min="2" max="20" />
+      </div>
+
+      <button class="btn-submit" onclick="submitRSVP()">Қатысуыңызды растау</button>
+    </div>
+
+    <div class="rsvp-success" id="rsvpSuccess">
+      <span class="heart">💍</span>
+      <p>Рахмет! Сізде тойда<br />қуана күтеміз ❤️</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <p class="footer-love">Ақ жүрекпен</p>
+  <p class="footer-names">Duman &amp; Malika</p>
+  <p class="footer-date">25 тамыз 2026</p>
+  <div class="footer-ornament">
+    <span></span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--gold)" opacity="0.6"><path d="M12 21.7C5.4 15.5 2 10.4 2 7a10 10 0 0 1 20 0c0 3.4-3.4 8.5-10 14.7z"/></svg>
+    <span></span>
+  </div>
+</footer>
+
+<!-- ═══════════════ SCRIPTS ═══════════════ -->
+<script>
+  /* ─── EASY-EDIT CONFIG ─── */
+  const CONFIG = {
+    weddingDate:  new Date('2026-08-25T18:00:00'),
+    venueAddress: '[Адрес будет добавлен позже]',
+    mapsURL:      'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    startTime:    '18:00',
+  };
+
+  // Apply config
+  document.getElementById('venueAddress').textContent = CONFIG.venueAddress;
+  document.getElementById('mapsBtn').href = CONFIG.mapsURL;
+
+  /* ─── SMOOTH SCROLL ─── */
+  function smoothTo(id) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  /* ─── PARALLAX HERO ─── */
+  const heroBg = document.getElementById('heroBg');
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        heroBg.style.transform = `translateY(${y * 0.28}px) scale(1.05)`;
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  /* ─── INTERSECTION OBSERVER (fade animations) ─── */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-up, .fade-in').forEach(el => io.observe(el));
+
+  // Hero fires on load
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.querySelectorAll('#hero .fade-up, #hero .fade-in').forEach(el => el.classList.add('visible'));
+    }, 200);
+  });
+
+  /* ─── COUNTDOWN ─── */
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function updateCountdown() {
+    const now  = Date.now();
+    const diff = CONFIG.weddingDate - now;
+
+    if (diff <= 0) {
+      document.getElementById('cdDisplay').style.display = 'none';
+      document.getElementById('cdDone').style.display    = 'block';
+      return;
+    }
+
+    const days  = Math.floor(diff / 864e5);
+    const hours = Math.floor((diff % 864e5) / 36e5);
+    const mins  = Math.floor((diff % 36e5)  / 6e4);
+    const secs  = Math.floor((diff % 6e4)   / 1e3);
+
+    document.getElementById('cd-days').textContent  = pad(days);
+    document.getElementById('cd-hours').textContent = pad(hours);
+    document.getElementById('cd-mins').textContent  = pad(mins);
+    document.getElementById('cd-secs').textContent  = pad(secs);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  /* ─── RSVP ─── */
+  function handleGuestChange(radio) {
+    const wrap = document.getElementById('family-count-wrap');
+    wrap.style.display = radio.value === 'family' ? 'flex' : 'none';
+  }
+
+  function submitRSVP() {
+    const name   = document.getElementById('rsvp-name').value.trim();
+    const phone  = document.getElementById('rsvp-phone').value.trim();
+    const guests = document.querySelector('input[name="guests"]:checked')?.value;
+    const count  = document.getElementById('rsvp-count').value;
+
+    if (!name) {
+      document.getElementById('rsvp-name').focus();
+      return;
+    }
+
+    /* ──────────────────────────────────────────────────
+       ПОДКЛЮЧЕНИЕ BACKEND:
+       Раскомментируйте нужный вариант.
+
+    // 1) Google Forms:
+    //    Замените URL и имена полей entry.XXXXXXX
+    // const url = `https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse?entry.111=${encodeURIComponent(name)}&entry.222=${encodeURIComponent(phone)}&entry.333=${guests}&submit=Submit`;
+    // fetch(url, {method:'POST', mode:'no-cors'});
+
+    // 2) Telegram Bot:
+    // const TG_TOKEN = 'YOUR_BOT_TOKEN';
+    // const CHAT_ID  = 'YOUR_CHAT_ID';
+    // fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({ chat_id: CHAT_ID, text: `RSVP:\n${name}\n${phone}\n${guests}\n${count}` })
+    // });
+
+    // 3) Custom API:
+    // fetch('/api/rsvp', {
+    //   method: 'POST',
+    //   headers: {'Content-Type':'application/json'},
+    //   body: JSON.stringify({name, phone, guests, count})
+    // });
+    ────────────────────────────────────────────────── */
+
+    // Show success
+    document.getElementById('rsvpForm').style.display    = 'none';
+    document.getElementById('rsvpSuccess').classList.add('show');
+    window.scrollTo({ top: document.getElementById('rsvp').offsetTop - 40, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
