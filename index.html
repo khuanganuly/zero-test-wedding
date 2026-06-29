@@ -868,7 +868,7 @@
   }
 
  async function submitRSVP() {
-    const name = document.getElementById('guestName').value.trim();
+    const name = document.getElementById('rsvp-name').value.trim();
 
     const selectedGuest = document.querySelector('input[name="guests"]:checked');
 
@@ -908,7 +908,7 @@
         });
 
         document.getElementById('rsvpForm').style.display = 'none';
-        document.getElementById('successMessage').style.display = 'block';
+        document.getElementById('rsvpSuccess').style.display = 'block';
 
     } catch (error) {
         alert('Қате орын алды. Қайталап көріңіз.');
