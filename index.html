@@ -756,7 +756,7 @@
       </div>
 
       <div class="rsvp-field" id="family-count-wrap">
-        <label for="rsvp-count">Адам саны</label>
+        <label for="rsvp-count">Қанша адам келесіздер?</label>
         <input type="number" id="rsvp-count" placeholder="3" min="2" max="20" />
       </div>
 
@@ -864,13 +864,27 @@
   /* ─── RSVP ─── */
   function handleGuestChange(radio) {
     const wrap = document.getElementById('family-count-wrap');
-    wrap.style.display = radio.value === 'family' ? 'flex' : 'none';
-  }
+    const input = document.getElementById('rsvp-count');
+
+    if (radio.value === 'family') {
+        wrap.style.display = 'flex';
+    } else {
+        wrap.style.display = 'none';
+        input.value = '';
+    }
+}
 
  async function submitRSVP() {
     const name = document.getElementById('rsvp-name').value.trim();
 
+    const familyCount = document.getElementById('rsvp-count').value;
+
     const selectedGuest = document.querySelector('input[name="guests"]:checked');
+
+    if (selectedGuest.value === 'family' && !familyCount) {
+        alert('Неше адам келетінін енгізіңіз');
+        return;
+    }
 
     if (!name) {
         alert('Аты-жөніңізді енгізіңіз');
@@ -899,7 +913,7 @@
     }
 
     const url =
-        `https://docs.google.com/forms/d/e/1FAIpQLScpmoIlU9Xi8eLWMDxNRjMEamYTVA8MBzYkejnSRZOw8fMc3w/formResponse?entry.1710032903=${encodeURIComponent(name)}&entry.48080934=${encodeURIComponent(guests)}`;
+        `https://docs.google.com/forms/d/e/1FAIpQLScpmoIlU9Xi8eLWMDxNRjMEamYTVA8MBzYkejnSRZOw8fMc3w/formResponse?entry.1710032903=${encodeURIComponent(name)}&entry.1671110472=${encodeURIComponent(selectedGuest.value === 'family' ? familyCount : '')}&entry.48080934=${encodeURIComponent(guests)}`;
 
     try {
         await fetch(url, {
