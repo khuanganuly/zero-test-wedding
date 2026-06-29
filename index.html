@@ -10,7 +10,7 @@
   <meta property="og:title" content="Duman & Malika — Свадьба 25 августа 2026" />
   <meta property="og:description" content="Мы приглашаем Вас разделить с нами один из самых важных дней нашей жизни." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>" />
@@ -613,11 +613,16 @@
 <!-- ═══════════════ ABOUT ═══════════════ -->
 <section class="section" id="about">
   <p class="section-eyebrow fade-up">— шақыру —</p>
-  <h2 class="section-title fade-up d1">Дорогие гости!</h2>
+  <h2 class="section-title fade-up d1">Құрметті қонақтар!</h2>
   <span class="gold-line fade-up d2" style="margin-bottom:2rem;"></span>
   <p class="section-body fade-up d3">
-    Мы будем счастливы разделить с Вами один из самых важных дней нашей жизни.
-    Ваше присутствие сделает этот день ещё более особенным.
+    Құрметті 
+
+Ағайын-туыс, бауырлар, құда-жекжат, жиен-бөлелер, дос-жаран, әріптес, көршілер!
+Сіздерді ұлымыз бен келініміз
+Думан мен Маликаның үйлену тойына арналған салтанатты дастарханымыздың қадірлі қонағы болуға шақырамыз!
+Той иелері: 
+Қуанған - Тілекгүл
   </p>
 </section>
 
@@ -739,19 +744,19 @@
           <span>Келемін</span>
         </label>
         <label class="radio-option">
-          <input type="radio" name="guests" value="couple" onchange="handleGuestChange(this)">
+          <input type="radio" name="guests" value="family" onchange="handleGuestChange(this)">
           <span class="radio-custom"></span>
           <span>Отбасыммен келемін</span>
         </label>
         <label class="radio-option">
-          <input type="radio" name="guests" value="family" onchange="handleGuestChange(this)">
+          <input type="radio" name="guests" value="decline" onchange="handleGuestChange(this)">
           <span class="radio-custom"></span>
-          <span>Өкінішке орай келе алмаймын</span>
+          <span>Келе алмаймын</span>
         </label>
       </div>
 
       <div class="rsvp-field" id="family-count-wrap">
-        <label for="rsvp-count">Количество человек</label>
+        <label for="rsvp-count">Адам саны</label>
         <input type="number" id="rsvp-count" placeholder="3" min="2" max="20" />
       </div>
 
@@ -862,48 +867,54 @@
     wrap.style.display = radio.value === 'family' ? 'flex' : 'none';
   }
 
-  function submitRSVP() {
-    const name   = document.getElementById('rsvp-name').value.trim();
-    const phone  = document.getElementById('rsvp-phone').value.trim();
-    const guests = document.querySelector('input[name="guests"]:checked')?.value;
-    const count  = document.getElementById('rsvp-count').value;
+ async function submitRSVP() {
+    const name = document.getElementById('guestName').value.trim();
+
+    const selectedGuest = document.querySelector('input[name="guests"]:checked');
 
     if (!name) {
-      document.getElementById('rsvp-name').focus();
-      return;
+        alert('Аты-жөніңізді енгізіңіз');
+        return;
     }
 
-    /* ──────────────────────────────────────────────────
-       ПОДКЛЮЧЕНИЕ BACKEND:
-       Раскомментируйте нужный вариант.
+    if (!selectedGuest) {
+        alert('Келу түрін таңдаңыз');
+        return;
+    }
 
-    // 1) Google Forms:
-    //    Замените URL и имена полей entry.XXXXXXX
-    // const url = `https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse?entry.111=${encodeURIComponent(name)}&entry.222=${encodeURIComponent(phone)}&entry.333=${guests}&submit=Submit`;
-    // fetch(url, {method:'POST', mode:'no-cors'});
+    let guests = '';
 
-    // 2) Telegram Bot:
-    // const TG_TOKEN = 'YOUR_BOT_TOKEN';
-    // const CHAT_ID  = 'YOUR_CHAT_ID';
-    // fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ chat_id: CHAT_ID, text: `RSVP:\n${name}\n${phone}\n${guests}\n${count}` })
-    // });
+    switch (selectedGuest.value) {
+        case 'alone':
+            guests = 'Келемін';
+            break;
 
-    // 3) Custom API:
-    // fetch('/api/rsvp', {
-    //   method: 'POST',
-    //   headers: {'Content-Type':'application/json'},
-    //   body: JSON.stringify({name, phone, guests, count})
-    // });
-    ────────────────────────────────────────────────── */
+        case 'family':
+            guests = 'Отбасыммен келемін';
+            break;
 
-    // Show success
-    document.getElementById('rsvpForm').style.display    = 'none';
-    document.getElementById('rsvpSuccess').classList.add('show');
-    window.scrollTo({ top: document.getElementById('rsvp').offsetTop - 40, behavior: 'smooth' });
-  }
+        case 'decline':
+            guests = 'Келе алмаймын';
+            break;
+    }
+
+    const url =
+        `https://docs.google.com/forms/d/e/1FAIpQLScpmoIlU9Xi8eLWMDxNRjMEamYTVA8MBzYkejnSRZOw8fMc3w/formResponse?entry.1710032903=${encodeURIComponent(name)}&entry.48080934=${encodeURIComponent(guests)}`;
+
+    try {
+        await fetch(url, {
+            method: 'POST',
+            mode: 'no-cors'
+        });
+
+        document.getElementById('rsvpForm').style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+
+    } catch (error) {
+        alert('Қате орын алды. Қайталап көріңіз.');
+        console.error(error);
+    }
+}
 </script>
 </body>
 </html>
