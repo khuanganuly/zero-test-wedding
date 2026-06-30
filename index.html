@@ -74,7 +74,7 @@
 
     .section-eyebrow {
       font-family: var(--font-body);
-      font-size: 0.65rem;
+      font-size: 1rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--gold);
@@ -187,6 +187,14 @@
 
     .hero-ampersand {
       color: var(--gold-light);
+      font-style: italic;
+      display: block;
+      font-size: 0.6em;
+      line-height: 1.2;
+    }
+
+    .inv-ampersand {
+      color: var(--gold-dark);
       font-style: italic;
       display: block;
       font-size: 0.6em;
@@ -892,29 +900,30 @@
 <!-- ═══════════════ ABOUT ═══════════════ -->
 <section class="section" id="about">
   <p class="section-eyebrow fade-up"></p>
-  <h2 class="section-title fade-up d1">Құрметті!</h2>
-  <span class="flourish reveal reveal-delay-2" aria-hidden="true">❧</span>
+  <h2 class="section-title fade-up d1">Құрметті</h2>
+  
   <p class="section-body fade-up d3">
     
 
-Ағайын-туыс, бауырлар, құда-жекжат, жиен-бөлелер, дос-жаран, әріптес, көршілер!
+Ағайын-туыс, аға-жеңге, бауырлар, әпке-жезде, құда-жекжат, нағашы, жиен-бөлелер, дос-жаран, әріптес, көршілер!
 Сіздерді ұлымыз бен келініміз</p>
-<span class="invitation-couple">Думан & Маликаның</span>
-<p class="section-body fade-up d3">үйлену тойына арналған салтанатты дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
+
+<span class="invitation-couple">Думан <em class="inv-ampersand">&amp;</em> Маликаның</span>
+<p class="section-body fade-up d3">үйлену тойына арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!</p>
 
 </section>
 
-<!--<div class="divider"><div class="divider-line"></div><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.7C5.4 15.5 2 10.4 2 7a10 10 0 0 1 20 0c0 3.4-3.4 8.5-10 14.7z"/></svg><div class="divider-line"></div></div>-->
+<div class="divider"><div class="divider-line"></div><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.7C5.4 15.5 2 10.4 2 7a10 10 0 0 1 20 0c0 3.4-3.4 8.5-10 14.7z"/></svg><div class="divider-line"></div></div>
 
 
 <!-- ═══════════════ DATE ═══════════════ -->
 <section class="section" id="date">
 
-    <p class="section-eyebrow fade-up">— той салтанаты —</p>
+    <p class="section-eyebrow fade-up"></p>
 
     <div class="date-card fade-up">
 
-        <h2 class="date-title">Той күні</h2>
+        <h2 class="date-title">Той салтанаты</h2>
 
         <p class="date-subtitle">
             25 тамыз 2026
@@ -1001,23 +1010,25 @@
         </div>
 
         <p class="time-label">
-            Той басталуы
+            Басталу уақыты  
         </p>
 
         <div class="time-value">
-            18:00
+            17:00
         </div>
 
     </div>
 
 </section>
 
+<div class="divider"><div class="divider-line"></div><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.7C5.4 15.5 2 10.4 2 7a10 10 0 0 1 20 0c0 3.4-3.4 8.5-10 14.7z"/></svg><div class="divider-line"></div></div>
+
 
 
 <!-- ═══════════════ VENUE ═══════════════ -->
 <section class="section" id="venue">
   <p class="section-eyebrow fade-up">— мекен-жайымыз —</p>
-  <h2 class="section-title fade-up d1">Астана</h2>
+  <h2 class="section-title fade-up d1">Астана қаласы</h2>
 
   <div class="glass-card fade-up d2">
     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.3" style="margin-bottom:1.2rem;">
@@ -1027,11 +1038,12 @@
 
     <!-- ✏️ ADDRESS — замените здесь -->
     <p class="venue-address" id="venueAddress">
-      [Адрес будет добавлен позже]
+      Шоссе Коргалжын 2/3
+      WEST HALL 
     </p>
 
     <!-- ✏️ MAPS LINK — замените href -->
-    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="btn-map" id="mapsBtn">
+    <a href="https://2gis.kz/astana/firm/70000001074607445" target="_blank" class="btn-map" id="mapsBtn">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="12" cy="10" r="3"/>
         <path d="M12 21.7C5.4 15.5 2 10.4 2 7a10 10 0 0 1 20 0c0 3.4-3.4 8.5-10 14.7z"/>
@@ -1151,8 +1163,8 @@
   /* ─── EASY-EDIT CONFIG ─── */
   const CONFIG = {
     weddingDate:  new Date('2026-08-25T18:00:00'),
-    venueAddress: '[Адрес будет добавлен позже]',
-    mapsURL:      'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    venueAddress: 'Шоссе Коргалжын 2/3 WEST HALL ',
+    mapsURL:      'https://2gis.kz/astana/firm/70000001074607445',
     startTime:    '18:00',
   };
 
