@@ -32,6 +32,7 @@
       --cream:     #faf7f2;
       --warm-white:#fffef9;
       --champagne: #e8dcc8;
+      --champagne2: #D4BA8A;
       --gold:      #c9a96e;
       --gold-light:#e4c98a;
       --gold-dark: #a07840;
@@ -116,22 +117,50 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(to bottom,
-          rgba(42,28,10,0.42) 0%,
-          rgba(42,28,10,0.25) 50%,
-          rgba(42,28,10,0.55) 100%),
-        url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=2000&q=85&auto=format&fit=crop') center/cover no-repeat;
-      transform-origin: center;
+      background-image: url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=2000&q=85&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center 30%;
       will-change: transform;
+      transform: scale(1.08);
+      transition: transform 0s;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(20,15,10,0.55) 0%,
+        rgba(20,15,10,0.45) 50%,
+        rgba(20,15,10,0.72) 100%
+      );
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      padding: 2rem;
-      max-width: 700px;
-      width: 100%;
+      text-align: center;
+
+      padding: 0 1.5rem;
+      transform: translateY(70px);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 2rem;
+      transform: translateY(-50px);
+      
+      animation: fadeUp 1.2s ease 0.3s forwards;
     }
 
     .hero-ornament {
@@ -344,6 +373,16 @@
     .btn-map:hover {
       background: var(--gold-dark);
       transform: translateY(-2px);
+    }
+
+    .flourish {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 3rem;
+      color: var(--champagne2);
+      line-height: 1;
+      display: block;
+      margin: 1rem 0;
     }
 
     /* ─── COUNTDOWN ─── */
@@ -613,17 +652,23 @@
 
 <!-- ═══════════════ HERO ═══════════════ -->
 <section id="hero">
-  <div class="hero-bg" id="heroBg"></div>
+  <div class="hero-bg" id="hero-bg" role="img" aria-label="Elegant wedding ceremony backdrop"></div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-ornament fade-in d1">
-      <span></span>
+    <div class="hero-content">
+      <span class="hero-eyebrow">You are cordially invited</span>
     </div>
+
 
     <h1 class="invitation-names">
       Duman
       <em class="hero-ampersand">&amp;</em>
       Malika
     </h1>
+
+    <div class="hero-ornament fade-in d1">
+      <span></span>
+    </div>
 
     <p class="hero-subtitle fade-up d3">Үйлену тойына шақыру</p>
 
@@ -644,9 +689,9 @@
 
 <!-- ═══════════════ ABOUT ═══════════════ -->
 <section class="section" id="about">
-  <p class="section-eyebrow fade-up">— шақыру —</p>
+  <p class="section-eyebrow fade-up">- шақыру -</p>
   <h2 class="section-title fade-up d1">Құрметті!</h2>
-  <span class="gold-line fade-up d2" style="margin-bottom:2rem;"></span>
+  <span class="flourish reveal reveal-delay-2" aria-hidden="true">❧</span>
   <p class="section-body fade-up d3">
     
 
@@ -657,7 +702,7 @@
 
 </section>
 
-<div class="divider"><div class="divider-line"></div><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.7C5.4 15.5 2 10.4 2 7a10 10 0 0 1 20 0c0 3.4-3.4 8.5-10 14.7z"/></svg><div class="divider-line"></div></div>
+
 
 <!-- ═══════════════ DATE ═══════════════ -->
 <section class="section" id="date">
@@ -679,7 +724,7 @@
   </div>
 </section>
 
-<div class="divider"><div class="divider-line"></div><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.7C5.4 15.5 2 10.4 2 7a10 10 0 0 1 20 0c0 3.4-3.4 8.5-10 14.7z"/></svg><div class="divider-line"></div></div>
+
 
 <!-- ═══════════════ VENUE ═══════════════ -->
 <section class="section" id="venue">
